@@ -1,0 +1,19 @@
+KodeKloud Enginer Task
+
+The Nautilus application development team has been working on a project repository /opt/beta.git. 
+This repo is cloned at /user/src/kodekloudrepos on storage server in Stratos DC. 
+They recently shared the following requirements with DevOps team:
+a. Create a new branch devops in /user/src/kodekloudrepos/beta repo from master and copy the /tmp/index.html file (on storage server itself). 
+b. Add/commit this file in the new branch and merge back that branch to the master branch. 
+c. Finally, push the changes to origin for both of the branches.
+
+
+[root@ststor01 beta]# history
+   cd /usr/src/kodekloudrepos/beta
+   git checkout -b devops
+   cp -v /tmp/index.html .
+   git add index.html
+   git commit -m "Added index.html"
+   git checkout master
+   git merge devops
+   git push origin master devops
